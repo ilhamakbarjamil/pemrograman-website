@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulir Pendaftaran</title>
+</head>
+<body>
+  <h2>Formulir Pendaftaran</h2>
+  <form>
+    <label for="fullname">Nama Lengkap:</label><br>
+    <input type="text" id="fullname" name="fullname" required><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <label>Jenis Kelamin:</label><br>
+    <input type="radio" id="male" name="gender" value="Laki-laki"> Laki-laki
+    <input type="radio" id="female" name="gender" value="Perempuan"> Perempuan<br><br>
+
+    <label for="dob">Tanggal Lahir:</label><br>
+    <input type="date" id="dob" name="dob"><br><br>
+
+    <label for="address">Alamat:</label><br>
+    <textarea id="address" name="address"></textarea><br><br>
+
+    <label for="program">Pilihan Program Studi:</label><br>
+    <select id="program" name="program">
+      <option value="">-- Pilih Program Studi --</option>
+      <option value="Teknik Informatika">Teknik Informatika</option>
+      <option value="Sistem Informasi">Sistem Informasi</option>
+      <option value="Multimedia">Multimedia</option>
+      <option value="Teknik Komputer Jaringan">Teknik Komputer Jaringan</option>
+    </select><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
