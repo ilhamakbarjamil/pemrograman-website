@@ -1,0 +1,42 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    text-align: center;
+    color: white; 
+}
+
+header {
+    background-color: #A52A2A; 
+    padding: 20px;
+}
+
+nav {
+    background-color: #FFD700; 
+    padding: 15px;
+    color: #333;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #9370DB; 
+    padding: 20px;
+}
+
+.content-wrapper {
+    display: flex; 
+    min-height: 400px; 
+}
+
+.content-kiri,
+.content-kanan {
+    background-color: #A52A2A; 
+    padding: 20px;
+    width: 20%; 
+}
+
+.main-content {
+    background-color: #00008B; 
+    padding: 20px;
+    flex-grow: 1; 
+}
