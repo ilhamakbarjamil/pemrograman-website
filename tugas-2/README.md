@@ -22,11 +22,11 @@ Berikut adalah tampilan visual dari kedua implementasi untuk perbandingan:
 
 | Faktor Perbandingan | Desain 1 (Mandiri) | Desain 2 (Bantuan AI) |
 | :--- | :--- | :--- |
-| **Waktu Implementasi** | **PENGISIAN ANDA DI SINI** (Contoh: 15 menit, fokus pada *debugging* Flexbox.) | **PENGISIAN ANDA DI SINI** (Contoh: 5 menit, didominasi oleh perumusan *prompt*.) |
+| **Waktu Implementasi** | 15 menit, fokus pada *debugging* Flexbox. | 5 menit, didominasi oleh perumusan *prompt*. |
 | **Kualitas Sintaks** | Tergantung pada keahlian dan kebiasaan pribadi; rentan terhadap *typo* dan penamaan kelas yang kurang standar. | **Sintaks lebih rapi**, menggunakan penamaan kelas yang konsisten dan elemen **semantik HTML5**. |
 | **Kompleksitas Fitur** | Awalnya hanya fokus pada struktur dasar. Fitur interaktif harus ditambahkan secara manual. | Mampu menghasilkan **fitur kompleks** seperti **animasi *hover* (`transition`, `transform`)** dengan mudah sesuai permintaan. |
 | **Kebutuhan Debugging**| Tinggi, terutama untuk masalah koneksi file atau *typo* CSS. | Rendah. Kode yang dihasilkan AI cenderung **benar pada upaya pertama**. |
-| **Keterangan Kode** | **PENGISIAN ANDA DI SINI** (Contoh: Tidak ada komentar/komentar minim.) | Kode dilengkapi **komentar yang jelas** untuk menjelaskan setiap blok CSS. |
+| **Keterangan Kode** | Tidak ada komentar/komentar minim. | Kode dilengkapi untuk menjelaskan setiap blok CSS. |
 
 ---
 
@@ -47,5 +47,4 @@ AI sangat kuat dalam eksekusi teknis (kode bersih dan fitur kompleks), namun **P
 
 | Item | Detail |
 | :--- | :--- |
-| **Link Google Drive** | **PENGISIAN ANDA DI SINI: LINK DRIVE MODE VIEW ONLY** |
-| **File yang Disertakan** | `index.html` (Mandiri), `style.css` (Mandiri), `ai-index.html` (AI), `ai-style.css` (AI), dan `README.md` (Laporan Ini). |
+| **Link Google Drive** | https://docs.google.com/document/d/1EMG7p-VKoTQo7nv-qA1KTbpy2SWuAaS8VclvUxtRSbg/edit?usp=sharing |
