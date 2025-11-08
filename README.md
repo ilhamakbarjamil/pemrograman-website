@@ -1,6 +1,6 @@
 # TUGAS LMS PEMROGRAMAN WEB #
 
-## cara mengganti nama author ##
+## Cara mengganti nama author di Github ##
 ### 1. ganti nama user dan email di lokal ###
 ```bash
 git config user.name
