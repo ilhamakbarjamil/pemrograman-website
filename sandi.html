@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persiapan Demo Modul 4 - Piranti Cerdas</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 4px solid #1a5490;
+            padding-bottom: 10px;
+            font-size: 28px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #2563eb;
+            border-left: 5px solid #2563eb;
+            padding-left: 15px;
+            margin-top: 30px;
+            font-size: 20px;
+            background: #eff6ff;
+            padding: 10px 15px;
+        }
+        
+        h3 {
+            color: #059669;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        
+        h4 {
+            color: #7c3aed;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        
+        .header-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+        
+        .komponen-list {
+            background: white;
+            border-left: 4px solid #10b981;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        .komponen-list ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        .komponen-list li {
+            margin: 5px 0;
+        }
+        
+        .rangkaian-box {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .logika-box {
+            background: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+        
+        table th {
+            background: #1e40af;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        table td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+        }
+        
+        table tr:nth-child(even) {
+            background: #f1f5f9;
+        }
+        
+        .warning-box {
+            background: #fef3c7;
+            border-left: 5px solid #f59e0b;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .warning-box strong {
+            color: #d97706;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .success-box {
+            background: #d1fae5;
+            border-left: 5px solid #10b981;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            padding: 8px;
+            margin: 5px 0;
+            border-left: 3px solid #10b981;
+            padding-left: 15px;
+        }
+        
+        .checklist li:before {
+            content: "☐ ";
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        code {
+            background: #1e293b;
+            color: #10b981;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+        
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+        }
+        
+        .tips-box {
+            background: #e0e7ff;
+            border: 2px solid #6366f1;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #f1f5f9;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #64748b;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-box">
+        <h1>📋 PERSIAPAN DEMO MODUL 4</h1>
+        <p style="font-size: 18px; margin: 10px 0;">Koneksi Jaringan dan Pengiriman Data IoT</p>
+        <p style="font-size: 14px; margin: 5px 0;">Universitas Muhammadiyah Malang</p>
+    </div>
+
+    <!-- KEGIATAN 1 -->
+    <div class="section">
+        <h2>🔧 KEGIATAN 1: Sensor Gerak + Cahaya + LED</h2>
+        
+        <div class="komponen-list">
+            <h3>Komponen yang Dibutuhkan:</h3>
+            <ul>
+                <li>✅ 1x NodeMCU ESP32</li>
+                <li>✅ 1x Sensor LDR (Light Dependent Resistor)</li>
+                <li>✅ 1x Sensor MPU6050 (Gyroscope/Accelerometer)</li>
+                <li>✅ 1x LED</li>
+                <li>✅ 1x Resistor 10kΩ (untuk LDR)</li>
+                <li>✅ 1x Resistor 220Ω (untuk LED)</li>
+                <li>✅ 1x Breadboard</li>
+                <li>✅ Kabel Jumper (Male-Male & Male-Female)</li>
+                <li>✅ Kabel USB</li>
+            </ul>
+        </div>
+
+        <h3>Rangkaian:</h3>
+        
+        <div class="rangkaian-box">
+            <h4>LDR:</h4>
+            <p>LDR Pin 1 → 3.3V ESP32<br>
+            LDR Pin 2 → GPIO 34 ESP32 + Resistor 10kΩ → GND</p>
+        </div>
+
+        <div class="rangkaian-box">
+            <h4>MPU6050:</h4>
+            <p>VCC → 3.3V ESP32<br>
+            GND → GND ESP32<br>
+            SDA → GPIO 21 ESP32<br>
+            SCL → GPIO 22 ESP32</p>
+        </div>
+
+        <div class="rangkaian-box">
+            <h4>LED:</h4>
+            <p>LED Anode (+) → Resistor 220Ω → GPIO 14 ESP32<br>
+            LED Cathode (-) → GND ESP32</p>
+        </div>
+
+        <div class="logika-box">
+            <h3>Logika Program:</h3>
+            <p><strong>Sensor LDR:</strong></p>
+            <ul>
+                <li>Nilai 0-50: "keadaan gelap" → LED MATI</li>
+                <li>Nilai 51-500: "keadaan redup" → LED NYALA 💡</li>
+                <li>Nilai 501-2000: "cahaya terang" → LED MATI</li>
+                <li>Nilai >2000: "sangat terang" → LED MATI</li>
+            </ul>
+            
+            <p><strong>Sensor MPU6050:</strong></p>
+            <ul>
+                <li>Sumbu X > 10: "sensor miring kiri"</li>
+                <li>Sumbu X < -10: "sensor miring kanan"</li>
+                <li>Sumbu Y > 10: "sensor miring depan"</li>
+                <li>Sumbu Y < -10: "sensor miring belakang"</li>
+            </ul>
+        </div>
+
+        <p><strong>Output:</strong> Serial Monitor menampilkan data real-time (tidak terkoneksi database)</p>
+    </div>
+
+    <!-- KEGIATAN 2 -->
+    <div class="section">
+        <h2>🌐 KEGIATAN 2: Monitoring Suhu & Kelembaban IoT</h2>
+        
+        <div class="komponen-list">
+            <h3>Komponen yang Dibutuhkan:</h3>
+            <ul>
+                <li>✅ 1x NodeMCU ESP32</li>
+                <li>✅ 1x Sensor DHT11 (Suhu & Kelembaban)</li>
+                <li>✅ 1x Breadboard</li>
+                <li>✅ Kabel Jumper (Male-Female)</li>
+                <li>✅ Kabel USB</li>
+            </ul>
+        </div>
+
+        <h3>Rangkaian:</h3>
+        
+        <div class="rangkaian-box">
+            <h4>DHT11:</h4>
+            <p>VCC → 3.3V ESP32<br>
+            GND → GND ESP32<br>
+            DATA → GPIO 4 ESP32</p>
+        </div>
+
+        <h3>Software yang Dibutuhkan:</h3>
+        
+        <h4>A. Laptop/Server:</h4>
+        <div class="komponen-list">
+            <p><strong>1. XAMPP</strong> (Apache + MySQL)</p>
+            <ul>
+                <li>Apache: untuk PHP server</li>
+                <li>MySQL: untuk database</li>
+            </ul>
+
+            <p><strong>2. Database MySQL:</strong></p>
+            <div class="code-block">
+Database: pirdas_modul4
+Tabel: data_suhu_kelembaban
+Kolom:
+  - id (INT, AUTO_INCREMENT, PRIMARY KEY)
+  - suhu (FLOAT)
+  - kelembaban (FLOAT)
+  - waktu (TIMESTAMP)
+            </div>
+
+            <p><strong>3. File PHP:</strong></p>
+            <ul>
+                <li>Lokasi: <code>C:\xampp\htdocs\pirdas_modul4\json_input.php</code></li>
+                <li>Fungsi: Menerima data JSON dari ESP32 dan simpan ke database</li>
+            </ul>
+        </div>
+
+        <h4>B. Arduino IDE:</h4>
+        <div class="komponen-list">
+            <p><strong>Library yang Harus Diinstall:</strong></p>
+            <ul>
+                <li>WiFi.h (built-in ESP32)</li>
+                <li>HTTPClient.h (built-in ESP32)</li>
+                <li>ArduinoJson by Benoit Blanchon</li>
+                <li>DHT sensor library by Adafruit</li>
+                <li>Adafruit Unified Sensor</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <strong>⚠️ Yang Harus Disesuaikan di Code:</strong>
+            <div class="code-block">
+const char* ssid = "NAMA_WIFI_ANDA";
+const char* password = "PASSWORD_WIFI_ANDA";
+const char* serverName = "http://IP_LAPTOP_ANDA/pirdas_modul4/json_input.php";
+            </div>
+            <p><strong>Cara Cek IP Laptop:</strong><br>
+            Windows: Buka CMD → ketik <code>ipconfig</code> → lihat IPv4 Address<br>
+            Contoh: <code>192.168.1.100</code></p>
+        </div>
+
+        <div class="logika-box">
+            <h3>Fitur Program:</h3>
+            <ul>
+                <li>✅ ESP32 terkoneksi ke WiFi</li>
+                <li>✅ Membaca suhu & kelembaban dari DHT11</li>
+                <li>✅ Menampilkan data di Serial Monitor</li>
+                <li>✅ Mengirim data ke server via HTTP POST</li>
+                <li>✅ Data dalam format JSON</li>
+                <li>✅ Data tersimpan di database MySQL</li>
+            </ul>
+        </div>
+
+        <h4>Format Data JSON:</h4>
+        <div class="code-block">
+{
+  "suhu": 28.5,
+  "kelembaban": 65.0
+}
+        </div>
+    </div>
+
+    <!-- CHECKLIST -->
+    <div class="section">
+        <h2>✅ CHECKLIST SEBELUM DEMO</h2>
+        
+        <h3>Perangkat Keras:</h3>
+        <ul class="checklist">
+            <li>Semua komponen tersedia dan berfungsi</li>
+            <li>Rangkaian Kegiatan 1 sudah dirakit dengan benar</li>
+            <li>Rangkaian Kegiatan 2 sudah dirakit dengan benar</li>
+            <li>Kabel tidak ada yang longgar</li>
+            <li>LED bisa menyala (test manual)</li>
+        </ul>
+
+        <h3>Software & Konfigurasi:</h3>
+        <ul class="checklist">
+            <li>Arduino IDE sudah terinstall</li>
+            <li>Semua library sudah terinstall</li>
+            <li>XAMPP sudah terinstall dan berjalan</li>
+            <li>Database <code>pirdas_modul4</code> sudah dibuat</li>
+            <li>Tabel <code>data_suhu_kelembaban</code> sudah ada</li>
+            <li>File <code>json_input.php</code> sudah di folder yang benar</li>
+            <li>ESP32 dan Laptop terhubung ke WiFi yang SAMA</li>
+        </ul>
+
+        <h3>Program:</h3>
+        <ul class="checklist">
+            <li>Code Kegiatan 1 sudah terupload dan berjalan</li>
+            <li>Code Kegiatan 2 sudah disesuaikan (WiFi, IP)</li>
+            <li>Code Kegiatan 2 sudah terupload dan berjalan</li>
+            <li>Serial Monitor menampilkan data dengan benar</li>
+            <li>Data masuk ke database (cek di phpMyAdmin)</li>
+        </ul>
+    </div>
+
+    <!-- SKENARIO DEMO -->
+    <div class="section">
+        <h2>🎯 SKENARIO DEMO</h2>
+        
+        <h3>Demo Kegiatan 1:</h3>
+        <ol>
+            <li>Tunjukkan rangkaian fisik</li>
+            <li>Buka Serial Monitor (115200 baud)</li>
+            <li><strong>Test LDR:</strong>
+                <ul>
+                    <li>Tutup sensor LDR → nilai turun → LED NYALA</li>
+                    <li>Buka sensor LDR → nilai naik → LED MATI</li>
+                </ul>
+            </li>
+            <li><strong>Test MPU6050:</strong>
+                <ul>
+                    <li>Miringkan breadboard ke kiri → "sensor miring kiri"</li>
+                    <li>Miringkan breadboard ke kanan → "sensor miring kanan"</li>
+                    <li>Miringkan ke depan → "sensor miring depan"</li>
+                    <li>Miringkan ke belakang → "sensor miring belakang"</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>Demo Kegiatan 2:</h3>
+        <ol>
+            <li>Tunjukkan rangkaian fisik DHT11</li>
+            <li>Tunjukkan XAMPP sedang running</li>
+            <li>Buka Serial Monitor (115200 baud)</li>
+            <li>Tunjukkan:
+                <ul>
+                    <li>ESP32 terkoneksi ke WiFi ✅</li>
+                    <li>Data suhu & kelembaban terbaca</li>
+                    <li>Data terkirim ke server (Response Code: 200)</li>
+                </ul>
+            </li>
+            <li>Buka browser → <code>http://localhost/phpmyadmin</code></li>
+            <li>Buka database <code>pirdas_modul4</code> → tabel <code>data_suhu_kelembaban</code></li>
+            <li><strong>Tunjukkan data baru masuk</strong> setiap 5 detik</li>
+        </ol>
+
+        <div class="success-box">
+            <p><strong>Test Real-Time:</strong></p>
+            <ul>
+                <li>Pegang sensor DHT11 → suhu naik</li>
+                <li>Refresh tabel database → data terbaru muncul</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- TROUBLESHOOTING -->
+    <div class="section">
+        <h2>🚨 TROUBLESHOOTING CEPAT</h2>
+        
+        <h3>Kegiatan 1:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Masalah</th>
+                    <th>Solusi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MPU6050 tidak terdeteksi</td>
+                    <td>Cek kabel SDA/SCL, pastikan Wire.begin(21,22)</td>
+                </tr>
+                <tr>
+                    <td>LED tidak nyala</td>
+                    <td>Cek polaritas LED, cek resistor 220Ω</td>
+                </tr>
+                <tr>
+                    <td>LDR tidak berubah</td>
+                    <td>Cek koneksi, pastikan pin 34 (analog)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Kegiatan 2:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Masalah</th>
+                    <th>Solusi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>WiFi tidak connect</td>
+                    <td>Cek SSID & password, restart ESP32</td>
+                </tr>
+                <tr>
+                    <td>Data tidak masuk database</td>
+                    <td>Cek IP laptop, cek XAMPP running, test dengan Postman</td>
+                </tr>
+                <tr>
+                    <td>DHT11 error</td>
+                    <td>Cek koneksi 3 kabel, tunggu 2 detik setelah power on</td>
+                </tr>
+                <tr>
+                    <td>Response code 404</td>
+                    <td>File PHP salah lokasi atau nama salah</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- KONTAK DARURAT -->
+    <div class="section">
+        <h2>📱 KONTAK DARURAT</h2>
+        <p>Jika ada masalah saat demo:</p>
+        <ol>
+            <li>Restart ESP32 (tekan tombol RST)</li>
+            <li>Restart XAMPP (Stop & Start Apache+MySQL)</li>
+            <li>Cek koneksi WiFi</li>
+            <li>Lihat Serial Monitor untuk error message</li>
+        </ol>
+    </div>
+
+    <!-- POIN PENILAIAN -->
+    <div class="section">
+        <h2>🎓 POIN PENILAIAN</h2>
+        <p><strong>Sesuai Rubrik:</strong></p>
+        <ul>
+            <li><strong>Pemahaman Materi (35%)</strong>: Jelaskan konsep WiFi, HTTP POST, JSON</li>
+            <li><strong>Ketepatan Program (25%)</strong>: Program berjalan tanpa error</li>
+            <li><strong>Ketepatan Rangkaian (25%)</strong>: Semua sensor terhubung benar</li>
+            <li><strong>Latihan (15%)</strong>: Latihan dikerjakan dengan baik</li>
+        </ul>
+        
+        <div class="warning-box">
+            <strong>⚠️ PERINGATAN:</strong>
+            <p>Jika source code mirip dengan kelompok lain → nilai maksimal <strong>D</strong></p>
+        </div>
+    </div>
+
+    <!-- TIPS -->
+    <div class="tips-box">
+        <h2>✨ TIPS DEMO SUKSES</h2>
+        <ol>
+            <li>✅ Datang <strong>10 menit lebih awal</strong> untuk setup</li>
+            <li>✅ <strong>Test semua</strong> sebelum giliran demo</li>
+            <li>✅ <strong>Backup code</strong> di USB/cloud</li>
+            <li>✅ <strong>Siapkan penjelasan</strong> untuk setiap langkah</li>
+            <li>✅ <strong>Tenang dan percaya diri</strong> 💪</li>
+        </ol>
+        <h3 style="text-align: center; color: #6366f1; margin-top: 20px;">SEMANGAT DEMO! 🚀</h3>
+    </div>
+
+    <div class="footer">
+        <p><strong>Dokumen Persiapan Demo - Modul 4 Piranti Cerdas</strong></p>
+        <p>Universitas Muhammadiyah Malang</p>
+        <p>© 2025 - Laboratorium Informatika</p>
+    </div>
+</body>
+</html>
